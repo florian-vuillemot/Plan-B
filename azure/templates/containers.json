@@ -18,10 +18,10 @@
       "name": "[parameters('containerGroupName')]",
       "type": "Microsoft.ContainerInstance/containerGroups",
         "apiVersion": "2018-04-01",
-        "restartPolicy": "OnFailure",
       "location": "[resourceGroup().location]",
         "properties": {
             "osType": "Linux",
+            "restartPolicy": "OnFailure",
             "ipAddress": {
                 "type": "Public",
                 "ports": [
