@@ -177,7 +177,6 @@
                     "computerName": "[parameters('virtualMachineName')]",
                     "adminUsername": "[parameters('adminUsername')]",
                     "linuxConfiguration": {
-                        "disablePasswordAuthentication": true,
                         "ssh": {
                             "publicKeys": [
                                 {
