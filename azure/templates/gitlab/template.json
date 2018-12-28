@@ -181,7 +181,7 @@
                         "ssh": {
                             "publicKeys": [
                                 {
-                                    "keyData": "[parameters('adminSshPubKey')]"
+                                    "path": "/home/florian/.ssh/id_rsa.pub"
                                 }
                             ]
                         },
