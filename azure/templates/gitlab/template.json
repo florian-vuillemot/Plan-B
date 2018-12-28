@@ -50,6 +50,9 @@
         "adminUsername": {
             "type": "string"
         },
+        "adminPublicKey": {
+            "type": "secureString"
+        },
         "diagnosticsStorageAccountName": {
             "type": "string"
         },
@@ -174,13 +177,16 @@
                     "computerName": "[parameters('virtualMachineName')]",
                     "adminUsername": "[parameters('adminUsername')]",
                     "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
                         "ssh": {
                             "publicKeys": [
                                 {
-                                    "path": "/home/florian/.ssh/id_rsa.pub"
-                                },
+                                    "path": "[concat('/home/', parameters('adminUsername'), '/.ssh/authorized_keys')]",
+                                    "keyData": "[parameters('adminPublicKey')]"
+                                }
                             ]
-                        },
+                        }
+                    }
                 },
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
