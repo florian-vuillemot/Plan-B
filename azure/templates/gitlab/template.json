@@ -181,7 +181,7 @@
                         "ssh": {
                             "publicKeys": [
                                 {
-                                    "keyData": [parameters('adminSshPubKey')]
+                                    "keyData": "[parameters('adminSshPubKey')]"
                                 }
                             ]
                         },
