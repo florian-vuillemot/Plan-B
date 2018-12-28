@@ -12,7 +12,7 @@
             "value": "sshPublicKey"
         },
         "dnsPrefix": {
-            "value": "planb-jenkins"
+            "value": "planbjenkins"
         },
         "publicIPName": {
             "value": "jenkins-pin"
