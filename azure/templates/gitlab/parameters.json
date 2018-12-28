@@ -105,6 +105,9 @@
         "adminUsername": {
             "value": "sunny"
         },
+        "adminSshPubKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCbxuA7Xm40TlYYZMylJrtjXgsT18YO0jidxF8Z6R0sGfQk4TmytpwZQrfUOV7LV20JD0ahZAGE645Utmy2ankHYIQ87BnLsgxlZfw75gPfqLuRmjhM0JW7ispDEodcHT1apGft9q/tExj/D/wuJW6+wms8xCJr/6Yz+wnAmS2ZwNIc3tjeWrgQMhs/uszZYY0kQwXYjRd16vJPt+uToWs9kRSZe/Hfst8493olho8RtmzEJk8NdFdVqpfN3SoZyh9yaTwK8GMA734uoM4HyO3S2xOd+TwMXJIuFsbReaJjQTA4sT8CKK+0GKll5aBJOwchUcrWkqWL2bJLogp1AFb florian@cc-cc25c525-5b97579558-lfvxt"
+        },
         "diagnosticsStorageAccountName": {
             "value": "planbdevrgdiag"
         },
