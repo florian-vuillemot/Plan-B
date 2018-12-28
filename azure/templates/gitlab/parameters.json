@@ -105,9 +105,6 @@
         "adminUsername": {
             "value": "sunny"
         },
-        "adminPassword": {
-            "value": null
-        },
         "diagnosticsStorageAccountName": {
             "value": "planbdevrgdiag"
         },
