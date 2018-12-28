@@ -50,8 +50,8 @@
         "adminUsername": {
             "type": "string"
         },
-        "adminPassword": {
-            "type": "secureString"
+        "adminSshPubKey": {
+            "type": "string"
         },
         "diagnosticsStorageAccountName": {
             "type": "string"
