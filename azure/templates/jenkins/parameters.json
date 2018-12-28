@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminSSHPublicKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDV8XG0NanhGC5Jf+3C13IVDmiQ9OdQFA+nAye2CiDgCXqY0VamFBiAo68xk97WhPstk6ZL4JENV7KtfKSW7tNu55lpp9C16ILv062umoGWEcGi8Mp8mqK/lYC2/ulYeF6I2STnCvN+Jr3aUlatW5k61alEDKC/qJTVKIiXtg5bJrnJrEJq60JcbquozQo/JhemOewO9xj2LjR2QdFsdThyEHtkKCUVu7h4S4eteevNkvPYZWzIy5DzUcT+JLdmrQVIeYwjHwwMy+gfX1teNkdlPpu3brGeLmQh/Z3lnv9Ecv4DM5OZlpgoFMCzCDAO+AxLUJ7noeWlr5THck+Hw/bd"
+        },
+        "adminUserName": {
+            "value": "epitech"
+        },
+        "authenticationType": {
+            "value": "sshPublicKey"
+        },
+        "dnsPrefix": {
+            "value": "planbjenkins"
+        },
+        "publicIPName": {
+            "value": "jenkins-pin"
+        },
+        "publicIPNewOrExisting": {
+            "value": "new"
+        },
+        "publicIPResourceGroup": {
+            "value": "planb-dev-rg"
+        },
+        "storageAccountType": {
+            "value": "Premium_LRS"
+        },
+        "vmName": {
+            "value": "jenkins-vm"
+        },
+        "vmSize": {
+            "value": "Standard_B1ms"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "jenkinsReleaseType": {
+            "value": "LTS"
+        },
+        "spType": {
+            "value": "msi"
+        },
+        "enableCloudAgents": {
+            "value": "vm"
+        },
+        "vnetName": {
+            "value": "jenkins-vnet"
+        },
+        "vnetResourceGroup": {
+            "value": "planb-dev-rg"
+        },
+        "vnetAddressPrefix": {
+            "value": "10.0.0.0/16"
+        },
+        "vnetNewOrExisting": {
+            "value": "new"
+        },
+        "subnetName": {
+            "value": "jenkins-sn"
+        },
+        "subnetAddressPrefix": {
+            "value": "10.0.0.0/24"
+        }
+    }
+}
