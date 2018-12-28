@@ -50,9 +50,6 @@
         "adminUsername": {
             "type": "string"
         },
-        "adminSshPubKey": {
-            "type": "string"
-        },
         "diagnosticsStorageAccountName": {
             "type": "string"
         },
@@ -180,7 +177,7 @@
                         "ssh": {
                             "publicKeys": [
                                 {
-                                    "keyData": "[parameters('adminSshPubKey')]"
+                                    "path": "/home/florian/.ssh/id_rsa.pub"
                                 },
                             ]
                         },
