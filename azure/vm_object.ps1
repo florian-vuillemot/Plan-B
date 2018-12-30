@@ -25,11 +25,3 @@ class Vm
         }
 }
 
-
-## Exemple
-$gitlab = [Vm]::new("gitlab-rg",
-                        "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/gitlab/template.json",
-                        "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/gitlab/parameters.json");
-
-New-AzureRmResourceGroup -Name $this.ResourceGroupName -Location "eastus";
-$gitlab.CreateFromUri();
