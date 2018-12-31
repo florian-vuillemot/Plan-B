@@ -294,20 +294,6 @@
                         }
                     },
                     {
-                        "name": "https-rule",
-                        "properties": {
-                            "access": "Allow",
-                            "description": "Allow HTTPS",
-                            "destinationAddressPrefix": "*",
-                            "destinationPortRange": "102",
-                            "direction": "Inbound",
-                            "priority": 101,
-                            "protocol": "Tcp",
-                            "sourceAddressPrefix": "Internet",
-                            "sourcePortRange": "*"
-                        }
-                    },
-                    {
                         "name": "jnlp-rule",
                         "properties": {
                             "access": "Allow",
