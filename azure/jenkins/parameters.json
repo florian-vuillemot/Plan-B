@@ -12,7 +12,7 @@
             "value": "sshPublicKey"
         },
         "dnsPrefix": {
-            "value": "planbjenkins"
+            "value": "jenkins-dns"
         },
         "publicIPName": {
             "value": "jenkins-pin"
@@ -21,7 +21,7 @@
             "value": "new"
         },
         "publicIPResourceGroup": {
-            "value": "planb-dev-rg"
+            "value": "jenkins-iprg"
         },
         "storageAccountType": {
             "value": "Premium_LRS"
@@ -48,7 +48,7 @@
             "value": "jenkins-vnet"
         },
         "vnetResourceGroup": {
-            "value": "planb-dev-rg"
+            "value": "jenkins-vnrg"
         },
         "vnetAddressPrefix": {
             "value": "10.0.0.0/16"
