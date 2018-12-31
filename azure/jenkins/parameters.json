@@ -12,7 +12,7 @@
             "value": "sshPublicKey"
         },
         "dnsPrefix": {
-            "value": "jenkins-dns"
+            "value": "epitech-jenkins-dns"
         },
         "publicIPName": {
             "value": "jenkins-pin"
