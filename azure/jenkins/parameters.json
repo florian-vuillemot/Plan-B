@@ -27,7 +27,7 @@
             "value": "Premium_LRS"
         },
         "vmName": {
-            "value": "jenkins"
+            "value": "jenkins-vm"
         },
         "vmSize": {
             "value": "Standard_B1ms"
