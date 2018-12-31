@@ -12,27 +12,19 @@ function createResourceGroup([string]$resourceGroupName){
         New-AzureRmResourceGroup -Name $ResourceGroupName -Location $resourceGroupLocation;
 }
 
-function createGitLab(){
-         $gitlabResourceGroup = "gitlab-rg";
-
-         createResourceGroup($gitLabResourceGroup);
-         $gitlab = [Vm]::new($gitLabResourceGroup,
-                            "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/gitlab/template.json",
-                            "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/gitlab/parameters.json");
-
-        $gitlab.CreateFromUri();
+function createVmFromUri([string]$resourceGroupName, [string]$templateUri, [string]$parametersUri){
+         Write-Output $resourceGroupName;
+         createResourceGroup($resourceGroupName);
+         $vm = [Vm]::new($resourceGroupName, $templateUri, $parametersUri);
+         $vm.CreateFromUri();
 }
 
-function createJenkins(){
-         $jenkinsResourceGroup = "jenkins-rg";
+# Create GitLab
+createVmFromUri "gitlab-rg" `
+                "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/gitlab/template.json" `
+                "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/gitlab/parameters.json"
 
-         createResourceGroup($jenkinsResourceGroup);
-         $jenkins = [Vm]::new($jenkinsResourceGroup,
-                              "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/jenkins/template.json",
-                              "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/jenkins/parameters.json");
-
-        $jenkins.CreateFromUri();
-}
-
-createGitLab;
-createJenkins;
+# Create Jenkins
+createVmFromUri "jenkins-rg" `
+                "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/jenkins/template.json" `
+                "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/jenkins/parameters.json"
