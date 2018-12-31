@@ -109,10 +109,10 @@
             "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDV8XG0NanhGC5Jf+3C13IVDmiQ9OdQFA+nAye2CiDgCXqY0VamFBiAo68xk97WhPstk6ZL4JENV7KtfKSW7tNu55lpp9C16ILv062umoGWEcGi8Mp8mqK/lYC2/ulYeF6I2STnCvN+Jr3aUlatW5k61alEDKC/qJTVKIiXtg5bJrnJrEJq60JcbquozQo/JhemOewO9xj2LjR2QdFsdThyEHtkKCUVu7h4S4eteevNkvPYZWzIy5DzUcT+JLdmrQVIeYwjHwwMy+gfX1teNkdlPpu3brGeLmQh/Z3lnv9Ecv4DM5OZlpgoFMCzCDAO+AxLUJ7noeWlr5THck+Hw/bd florian@cc-b57974f3-b7f87c97d-rcf6b"
         },
         "diagnosticsStorageAccountName": {
-            "value": "gitlab-dsa"
+            "value": "gitlabdsa"
         },
         "diagnosticsStorageAccountId": {
-            "value": "Microsoft.Storage/storageAccounts/gitlab-dsa"
+            "value": "Microsoft.Storage/storageAccounts/gitlabdsa"
         },
         "diagnosticsStorageAccountType": {
             "value": "Standard_LRS"
