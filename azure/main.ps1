@@ -2,7 +2,7 @@
 # For no overkill reasons we are not put the little conf allow in conf file
 #
 
-Import-Module $PSScriptRoot\t2.ps1
+Import-Module $PSScriptRoot\vm_object.ps1;
 
 # We use the same resource group location for GitLab and Jenkins
 $resourceGroupLocation = "eastus";
