@@ -294,17 +294,18 @@
                         }
                     },
                     {
-                        "name": "https-rule",
+                        "name": "HTTPS",
                         "properties": {
+                            "priority": 1030,
+                            "protocol": "TCP",
                             "access": "Allow",
-                            "description": "Allow HTTPS",
-                            "destinationAddressPrefix": "*",
-                            "destinationPortRange": "102",
                             "direction": "Inbound",
-                            "priority": 101,
-                            "protocol": "Tcp",
-                            "sourceAddressPrefix": "Internet",
-                            "sourcePortRange": "*"
+                            "sourceApplicationSecurityGroups": [],
+                            "destinationApplicationSecurityGroups": [],
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "443"
                         }
                     },
                     {

@@ -12,16 +12,16 @@
             "value": "sshPublicKey"
         },
         "dnsPrefix": {
-            "value": "planbjenkins"
+            "value": "epitech-jenkins-dns"
         },
         "publicIPName": {
-            "value": "jenkins-pin"
+            "value": "jenkins-pip"
         },
         "publicIPNewOrExisting": {
             "value": "new"
         },
         "publicIPResourceGroup": {
-            "value": "planb-dev-rg"
+            "value": "jenkins-rg"
         },
         "storageAccountType": {
             "value": "Premium_LRS"
@@ -48,7 +48,7 @@
             "value": "jenkins-vnet"
         },
         "vnetResourceGroup": {
-            "value": "planb-dev-rg"
+            "value": "jenkins-rg"
         },
         "vnetAddressPrefix": {
             "value": "10.0.0.0/16"
