@@ -22,3 +22,6 @@ postfix:
 'systemctl enable postfix':
     cmd.run
 
+admin:
+    user.present:
+        - password: root
