@@ -25,3 +25,4 @@ postfix:
 admin:
     user.present:
         - password: root
+        - hash_password: True
