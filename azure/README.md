@@ -6,6 +6,8 @@ In this part we will show you how to automatically deploy your GitLab and your J
 - GitLab configuration is extract and adapt from official GitLab CE image on the Azure MarketPlace
 - Jenkins configuration is extract from official Jenkins image from Microsoft on the Azure MarketPlace
 
+Note: We don't speak about the mail server here. You can found the documentation in the directory "postfix" at the root of the project.
+
 ## What you need
 
 - Azure account
