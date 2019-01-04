@@ -8,9 +8,14 @@ Installation is in 3 parts
 
 2. Install and configure SaltStack on the Centos 7 machine
     
-3 Install and configure PostFix with SaltStack
+3. Install and configure PostFix with SaltStack
 
 
+#### Why SaltStack
+
+Easy, scalable and powerful. Here we use only one capacity of SaltStack, we only deploy our infra. But in the future we could manage multiples VM with management of failures and DR. Moreover its a standalone technologie that we can use in a multi cloud strategy.
+
+We also could use Docker. But Docker add an over layer and have a runtime cost. Here, this mail server will **only** be used with GitLab. So we don't need a big machine and we can use the smallest that Azure provide.
 
 ## Mandatory
 
