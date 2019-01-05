@@ -11,3 +11,6 @@ squirrelmail:
 
 'systemctl restart httpd':
     cmd.run
+    
+'systemctl enable httpd':
+    cmd.run
