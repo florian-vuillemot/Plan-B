@@ -58,57 +58,58 @@ Take a coffee! This will take time. You can see infrastructure building from you
 
 2. Make some backup. You can program back up automaticaly on Azure. Just follow this documentation. You can add back up in the scripts provide in this tutorial.
 
-Back up allow you to create the same machine in another region or Restore a VM after a crash. You can restore a VM directly from the Azure Portal.
+    Back up allow you to create the same machine in another region or Restore a VM after a crash. You can restore a VM directly from the Azure Portal.
 
-Doc:
+    Doc:
 
-- https://docs.microsoft.com/en-us/azure/backup/quick-backup-vm-portal
+        - https://docs.microsoft.com/en-us/azure/backup/quick-backup-vm-portal
 
-- https://docs.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms
+        - https://docs.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms
 
 3. Disaster Recovery strategy. In case of disaster on a Azure datacenter you can switch on another region. I should do this for my school project. It's a little more complex that make backup.
 
-Microsoft provide a lot of documentation about DR. I choosed the simpliest strategy (it's not the better).
+    Microsoft provide a lot of documentation about DR. I choosed the simpliest strategy (it's not the better).
 
-Global vision: You need two Azure service. First **Azure DNS** for provide a entry point on your application. This service will route each user on the region up. Second you need **Azure Site Recovery** that make a copy of a resource group from a region to another region.
+    Global vision: You need two Azure service. First **Azure DNS** for provide a entry point on your application. This service will route each user on the region up. Second you need **Azure Site Recovery** that make a copy of a resource group from a region to another region.
 
-Azure Site Recovery will not create another VM that run everytime. It will create another disk and synchronise it with the "master" disk. Same for the network. But Site Recovery not provide a public IP for the VM. So you should configure the Network for provide another **static** IP adresse on the second region that can be hit by Azure DNS.
+    Azure Site Recovery will not create another VM that run everytime. It will create another disk and synchronise it with the "master" disk. Same for the network. But Site Recovery not provide a public IP for the VM. So you should configure the Network for provide another **static** IP adresse on the second region that can be hit by Azure DNS.
 
-Summary steps:
+    Summary steps:
 
-1. Give a public and Static IP at your VM.
+        1. Give a public and Static IP at your VM.
 
-2. Go on "Disaster Recovery" in you VM action and configure it.
+        2. Go on "Disaster Recovery" in you VM action and configure it.
 
-3. When the other site is ready configure it by adding a static public IP at your VM.
+        3. When the other site is ready configure it by adding a static public IP at your VM.
 
-4. Use Azure DNS for route user on the site up.
+        4. Use Azure DNS for route user on the site up.
 
-When a disaster happen, you should go on Azure Site Recovery and activate the "failover". This will create and configure a VM in the secondary region. After create the failover, go on Azure DNS and change the routing from your "prod" IP to the "dr" IP. It's really simple ! But the VM provisioning take time, and, moreover you should do this manually... So it's not perfect. But you have a cheap and functional DR strategy so it's a good point. Beside, don't forget that a DR plan is different of high disponibility.
+    When a disaster happen, you should go on Azure Site Recovery and activate the "failover". This will create and configure a VM in the secondary region. After create the failover, go on Azure DNS and change the routing from your "prod" IP to the "dr" IP. It's really simple ! But the VM provisioning take time, and, moreover you should do this manually... So it's not perfect. But you have a cheap and functional DR strategy so it's a good point. Beside, don't forget that a DR plan is different of high disponibility.
 
-Doc:
+    Doc:
 
-- https://docs.microsoft.com/en-us/azure/networking/disaster-recovery-dns-traffic-manager#manual-failover-using-azure-dns
+        - https://docs.microsoft.com/en-us/azure/networking/disaster-recovery-dns-traffic-manager#manual-failover-using-azure-dns
 
-- https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback
+        - https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback
 
-- https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication
+        - https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication
 
 
 5. Monitoring
 
-Monitoring is critical. You always want to know what's happening on your infrastructure. Moreover in case of disaster (point 4), only monitoring allow you reactivity.
+    Monitoring is critical. You always want to know what's happening on your infrastructure. Moreover in case of disaster (point 4), only monitoring allow you reactivity.
 
-Monitoring on Azure is not trivial. I find it is difficult to learn. I had to read and re read the doc for understand that the best solution for this infrastuture is to use Agent on my Linux.
+    Monitoring on Azure is not trivial. I find it is difficult to learn. I had to read and re read the doc for understand that the best solution for this infrastuture is to use Agent on my Linux.
 
-Agent ? Microsoft create some program for help to monitore machine. A agent collect information about the machine (cpu/ram/disk...) and send it to Azure. Thanks to it you can show in the metric what's happend on you machine.
+    Agent ? Microsoft create some program for help to monitore machine. A agent collect information about the machine (cpu/ram/disk...) and send it to Azure. Thanks to it you can show in the metric what's happend on you machine.
 
-On Linux, you should install the agent except if you use a image buidl by Microsoft (from the MarketPlace). Else go on https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux#installation.
+    On Linux, you should install the agent except if you use a image buidl by Microsoft (from the MarketPlace). Else go on https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux#installation.
 
-Install agent only if you need it, don't spend time to install agent if you will not use it. For exemple, I will not manage my GitLab mail server (Postfix).
+    Install agent only if you need it, don't spend time to install agent if you will not use it. For exemple, I will not manage my GitLab mail server (Postfix).
+
 
 6. Alerting
 
-Monitoring is really importante. But you can go far with alerting ! Monitore what you need and add alert on everything. It's really easy and quick to create alert on Azure. Go on you VM > Monitoring > Alerts > Create. This alerting is trivial. But for starting and not important service this is perfect !
+    Monitoring is really importante. But you can go far with alerting ! Monitore what you need and add alert on everything. It's really easy and quick to create alert on Azure. Go on you VM > Monitoring > Alerts > Create. This alerting is trivial. But for starting and not important service this is perfect !
 
-For a real service in production you need more important tools as **OMS**.
+    For a real service in production you need more important tools as **OMS**.
