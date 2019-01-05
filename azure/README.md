@@ -25,7 +25,7 @@ Take a coffee! This will take time. You can see infrastructure building from you
 
 3. Check that you infrastructure is up. For do this, go on Azure Portal > VMs > IP/DNS address
 
-    3.1 For GitLab you should see first authentification parameters. You can configure your GitLab, is totally up and ready :) -> If you want configure HTTPS on your machine, go part 5
+    3.1 For GitLab you should see first authentification parameters. You can configure your GitLab, is totally up and ready :)
   
     3.2 For Jenkins you should see a error with something like this 
   
@@ -52,6 +52,44 @@ Take a coffee! This will take time. You can see infrastructure building from you
       - Move the certificates files in the "good" directories for Nginx configurations
       - Restart Nginx and Jenkins daemons
 
-5. Configure HTTPS on GitLab
+## Improvement
 
-  TODO
+1. Add/update HTTPS on your VM (use Letsencrypt, Azure with Azure Keyvault, etc...)
+
+2. Make some backup. You can program back up automaticaly on Azure. Just follow this documentation. You can add back up in the scripts provide in this tutorial.
+
+Back up allow you to create the same machine in another region or Restore a VM after a crash. You can restore a VM directly from the Azure Portal.
+
+Doc:
+
+- https://docs.microsoft.com/en-us/azure/backup/quick-backup-vm-portal
+
+- https://docs.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms
+
+3. Disaster Recovery strategy. In case of disaster on a Azure datacenter you can switch on another region. I should do this for my school project. It's a little more complex that make backup.
+
+Microsoft provide a lot of documentation about DR. I choosed the simpliest strategy (it's not the better).
+
+Global vision: You need two Azure service. First **Azure DNS** for provide a entry point on your application. This service will route each user on the region up. Second you need **Azure Site Recovery** that make a copy of a resource group from a region to another region.
+
+Azure Site Recovery will not create another VM that run everytime. It will create another disk and synchronise it with the "master" disk. Same for the network. But Site Recovery not provide a public IP for the VM. So you should configure the Network for provide another **static** IP adresse on the second region that can be hit by Azure DNS.
+
+Summary steps:
+
+1. Give a public and Static IP at your VM.
+
+2. Go on "Disaster Recovery" in you VM action and configure it.
+
+3. When the other site is ready configure it by adding a static public IP at your VM.
+
+4. Use Azure DNS for route user on the site up.
+
+When a disaster happen, you should go on Azure Site Recovery and activate the "failover". This will create and configure a VM in the secondary region. After create the failover, go on Azure DNS and change the routing from your "prod" IP to the "dr" IP. It's really simple ! But the VM provisioning take time, and, moreover you should do this manually... So it's not perfect. But you have a cheap and functional DR strategy so it's a good point. Beside, don't forget that a DR plan is different of high disponibility.
+
+Doc:
+
+- https://docs.microsoft.com/en-us/azure/networking/disaster-recovery-dns-traffic-manager#manual-failover-using-azure-dns
+
+- https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback
+
+- https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication
