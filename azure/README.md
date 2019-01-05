@@ -93,3 +93,22 @@ Doc:
 - https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback
 
 - https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication
+
+
+5. Monitoring
+
+Monitoring is critical. You always want to know what's happening on your infrastructure. Moreover in case of disaster (point 4), only monitoring allow you reactivity.
+
+Monitoring on Azure is not trivial. I find it is difficult to learn. I had to read and re read the doc for understand that the best solution for this infrastuture is to use Agent on my Linux.
+
+Agent ? Microsoft create some program for help to monitore machine. A agent collect information about the machine (cpu/ram/disk...) and send it to Azure. Thanks to it you can show in the metric what's happend on you machine.
+
+On Linux, you should install the agent except if you use a image buidl by Microsoft (from the MarketPlace). Else go on https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux#installation.
+
+Install agent only if you need it, don't spend time to install agent if you will not use it. For exemple, I will not manage my GitLab mail server (Postfix).
+
+6. Alerting
+
+Monitoring is really importante. But you can go far with alerting ! Monitore what you need and add alert on everything. It's really easy and quick to create alert on Azure. Go on you VM > Monitoring > Alerts > Create. This alerting is trivial. But for starting and not important service this is perfect !
+
+For a real service in production you need more important tools as **OMS**.
