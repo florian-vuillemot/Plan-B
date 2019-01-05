@@ -28,3 +28,8 @@ createVmFromUri "gitlab-rg" `
 createVmFromUri "jenkins-rg" `
                 "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/jenkins/template.json" `
                 "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/jenkins/parameters.json"
+
+# Create Centos7.5 VM for Postfix
+createVmFromUri "postfix-rg" `
+                "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/postfix/template.json" `
+                "https://raw.githubusercontent.com/florian-vuillemot/Plan-B/master/azure/postfix/parameters.json"
