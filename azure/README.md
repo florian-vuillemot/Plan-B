@@ -84,7 +84,9 @@ Take a coffee! This will take time. You can see infrastructure building from you
 
         4. Use Azure DNS for route user on the site up.
 
-    When a disaster happen, you should go on Azure Site Recovery and activate the "failover". This will create and configure a VM in the secondary region. After create the failover, go on Azure DNS and change the routing from your "prod" IP to the "dr" IP. It's really simple ! But the VM provisioning take time, and, moreover you should do this manually... So it's not perfect. But you have a cheap and functional DR strategy so it's a good point. Beside, don't forget that a DR plan is different of high disponibility.
+    When a disaster happen, you should go on Azure Site Recovery and activate the "failover". This will create and configure a VM in the secondary region. After create the failover, go on Azure DNS and change the routing from your "prod" IP to the "dr" IP. That's done !
+    
+    VM provisioning take time and you should do this manually... So it's not perfect. But you have a cheap and functional DR strategy so it's a good point. Beside, don't forget that a DR plan is different of high disponibility.
 
     Doc:
 
