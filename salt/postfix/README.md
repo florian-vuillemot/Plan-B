@@ -23,7 +23,7 @@ We also could use Docker. But Docker add an over layer and have a runtime cost. 
 
 - Powershell or Azure Cloud Shell
 
-- A Linux configure with you Salt Master and a Public IP address
+- A Linux configure with you Salt Master and a Public IP address. You can also install the Salt Master on the same machine that the Salt Minion. You will loose a lot of SaltStack functionality but, for this tutorial this is OK.
 
 
 ## Steps
@@ -50,3 +50,7 @@ Configure you Salt Master for run the state of this directory. Or create a symli
     
 Run the installation with `salt 'centos-vm' state.apply`.
 
+
+## Note
+
+The SaltStack script were not build with a Azure Instance. It were build with a VM on Virtualbox. So if you execute the script on a Azure VM (as we explain in thie README) you will get some error with `firewall-cmd`. In this case is not a problem. Here, the job done by firewall-cmd is done by the ARM template that you execute for create the VM on Azure.
