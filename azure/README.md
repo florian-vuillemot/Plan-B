@@ -106,12 +106,20 @@ Take a coffee! This will take time. You can see infrastructure building from you
     Agent ? Microsoft create some program for help to monitore machine. A agent collect information about the machine (cpu/ram/disk...) and send it to Azure. Thanks to it you can show in the metric what's happend on you machine.
 
     On Linux, you should install the agent except if you use a image buidl by Microsoft (from the MarketPlace). Else go on https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux#installation.
+    
+    When Agent is up you should go on you VM, Diagnostics settings and activate it. When is done go in Metrics and select the good metric namespace. You can now select more metrics.
+    
+    Don't forget to "pin" important metric on your Dashboards ;-)
 
-    Install agent only if you need it, don't spend time to install agent if you will not use it. For exemple, I will not manage my GitLab mail server (Postfix).
+    Note: Install agent only if you need it, don't spend time to install agent if you will not use it. For exemple, I will not manage my GitLab mail server (Postfix).
 
 
 6. Alerting
 
     Monitoring is really importante. But you can go far with alerting ! Monitore what you need and add alert on everything. It's really easy and quick to create alert on Azure. Go on you VM > Monitoring > Alerts > Create. This alerting is trivial. But for starting and not important service this is perfect !
+    
+    If you have Agent install on your machine you can create "custom" alert base on the metrics. By custom I want to said, throw error when a metric is greater/lower of a value.
+    
+    For do this, go in Monitor > Alert > Manage alert rules > View classic alerts then fill field: subscription, Source, Resource Group, Resource type and Resource. When it's done click on "Add metric alert" and fill fields. This is 
 
-    For a real service in production you need more important tools as **OMS**.
+    If you want do more and a powerful tools, you can show **OMS** that allow you to do amazing custom alert.
