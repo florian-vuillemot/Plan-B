@@ -40,7 +40,7 @@ Take a coffee! This will take time. You can see infrastructure building from you
     
     Nginx is ever present on the Jenkins machine. So we only need to configure Nginx for use HTTPS and make a redirection from the port 443 to 8080 (Jenkins port).
     
-    Copy your `key` and your `crt` certificate for HTTPS on your Jenkins machine. Replace with your files naming. You should respect naming `certificate.[crt|key]` on the Jenkins VM.
+    Here we use certificate create with OpenSSL because we don't have domain name. Use LetsEncrypt or Azure KeyVault for create a real certificate :). Copy your `key` and your `crt` certificate for HTTPS on your Jenkins machine. Replace with your files naming. You should respect naming `certificate.[crt|key]` on the Jenkins VM.
 
     - `scp certificate.crt epitech@IP_ADDRESS:/home/epitech/`
     - `scp certificate.key epitech@IP_ADDRESS:/home/epitech/`
